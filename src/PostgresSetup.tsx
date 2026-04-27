@@ -12,9 +12,9 @@ function escapeSqlString(s: string): string {
 
 /** `md5` + hex( UTF-8( password + role ) ) for PostgreSQL legacy password format. */
 function postgresMd5PasswordText(roleName: string): string {
-  const role = roleName.trim() || 'somedbapp'
+  const role = roleName.trim() || 'hohoho'
   const timex = Date.now().toString()
-  return 'md5' + md5(timex + role)
+  return 'fdx' + md5(timex + role)
 }
 
 const IDENT_RE = /^[a-zA-Z_][a-zA-Z0-9_]*$/
@@ -253,9 +253,10 @@ function connectPsqlUserFromStorage(
   parsed: (Partial<PostgresForm> & LegacySuperuser) | null,
 ): string {
   if (parsed == null) return defaultForm.connectPsqlUser
-  const hasNew =
-    typeof parsed.connectPsqlUser === 'string' && parsed.connectPsqlUser.trim() !== ''
-  if (hasNew) return parsed.connectPsqlUser.trim()!
+  const connectUser = parsed.connectPsqlUser
+  if (typeof connectUser === 'string' && connectUser.trim() !== '') {
+    return connectUser.trim()
+  }
   if (parsed.superuserForDocs === 'custom' && parsed.customSuperuser?.trim()) {
     return parsed.customSuperuser.trim()!
   }
