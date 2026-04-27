@@ -1,6 +1,16 @@
-# React + TypeScript + Vite
+# newdb
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Purpose:** A small browser UI that walks you through common PostgreSQL setup decisions (database name, roles, optional extensions) and **generates** the SQL and shell/`psql` / Docker / Docker Compose commands to run them, so you can stand up a database without retyping boilerplate or looking up every escape rule.
+
+**Goal:** Make it fast and reliable to get from “I need a Postgres” to a consistent, copy-pasteable setup script, with your choices **saved locally** between sessions (storage key: `newdb:postgres-setup`).
+
+---
+
+# React + TypeScript + Vite (tooling)
+
+This project is built on the Vite template below for React, TypeScript, and HMR.
+
+The template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
