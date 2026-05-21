@@ -16,6 +16,19 @@
   border-bottom: 1px solid var(--border);
 }
 
+.ps-header-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.ps-app-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
 .ps-header h1 {
   font-size: 1.75rem;
   letter-spacing: -0.02em;

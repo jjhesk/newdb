@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import md5 from 'md5'
 import './PostgresSetup.css'
+import databaseIcon from './assets/database-com.svg'
 import { getTheme, toggleTheme, type Theme } from './theme'
 
 const STORAGE_KEY = 'newdb:postgres-setup'
@@ -573,7 +574,9 @@ export default function PostgresSetup() {
   return (
     <div className="ps-app">
       <header className="ps-header">
-        <div>
+        <div className="ps-header-brand">
+          <img className="ps-app-icon" src={databaseIcon} alt="" aria-hidden="true" />
+          <div>
           <p className="ps-eyebrow">PostgreSQL</p>
           <h1>Role & database setup</h1>
           <p className="ps-sub">
@@ -581,6 +584,7 @@ export default function PostgresSetup() {
             Debian/Ubuntu) a separate <code>apt</code> install script. Values stay in this browser
             only. Then run the SQL in <code>psql</code> as a superuser.
           </p>
+          </div>
         </div>
         <div className="ps-header-actions">
           <button
